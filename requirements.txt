@@ -1,0 +1,39 @@
+# ══════════════════════════════════════════════════════════════
+#  AI Assistant (Full) — Python dependencies
+#  Install:  pip install -r requirements.txt
+# ══════════════════════════════════════════════════════════════
+
+# ── AgentCore ─────────────────────────────────────────────────
+# SDK: BedrockAgentCoreApp wrapper (turns your function into
+#      an AgentCore-compatible HTTP server)
+bedrock-agentcore>=1.1.0
+
+# CLI toolkit: gives you the `agentcore` command for deploying
+bedrock-agentcore-starter-toolkit
+
+# ── AutoGen (Microsoft) ───────────────────────────────────────
+# High-level agent framework (AssistantAgent, tool calling, etc.)
+autogen-agentchat>=0.4.0
+
+# AutoGen extension: Anthropic / AWS Bedrock model client
+autogen-ext[anthropic]>=0.4.0
+
+# AutoGen extension: MCP tool support — required for Gateway tools
+# (autogen_ext.tools.mcp / mcp_server_tools)
+autogen-ext[mcp]>=0.4.0
+
+# Token counting (required internally by autogen-ext)
+tiktoken
+
+# ── Internet Search Tool (built-in, always available) ─────────
+# DuckDuckGo search — no API key required, works out of the box
+ddgs
+
+# ── AWS SDK ───────────────────────────────────────────────────
+# boto3: used for
+#   - invoking the deployed agent (invoke.py / chat.py)
+#   - AgentCore Memory  (memory_utils.py)
+#   - AgentCore Identity (identity_utils.py)
+#   - Bedrock Guardrails (guardrail_utils.py)
+#   - Cognito sign-in for Gateway auth (gateway_utils.py)
+boto3
